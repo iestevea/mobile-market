@@ -11,11 +11,8 @@ export const MobileDetailContainer: React.FC = () => {
 
   const onLoadMobileDetail = async (mobileId: number) => {
     const apiMobileDetail = await fetchMobileDetail(mobileId);
-    debugger;
     const vmMobileDetail = mapMobileFromApiToVm(apiMobileDetail);
-    debugger;
     setMobile(vmMobileDetail);
-    debugger;
   };
 
   React.useEffect(() => {

@@ -1,4 +1,5 @@
 export interface MobileVm {
+  id: '',
   imgUrl: string;
   brand: string;
   model: string;
@@ -13,6 +14,7 @@ export interface MobileVm {
 }
 
 export const createEmptyMobile = (): MobileVm => ({
+  id: '',
   imgUrl: '',
   brand: '',
   model: '',
