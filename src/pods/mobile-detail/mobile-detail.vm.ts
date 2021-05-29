@@ -1,5 +1,5 @@
 export interface MobileVm {
-  id: '',
+  id: string;
   imgUrl: string;
   brand: string;
   model: string;
