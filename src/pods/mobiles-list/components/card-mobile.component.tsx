@@ -1,64 +1,41 @@
 import React from "react";
 import {
-  Button,
-  ListItemAvatar,
-  ListItem,
-  Avatar,
-  ListItemText,
   Typography,
-  Divider,
+  Card,
+  CardContent,
+  CardHeader,
 } from "@material-ui/core";
 import { routes } from "../../../core/router";
 import { MobileVm } from "../mobiles-list.vm";
+import { useHistory } from "react-router-dom";
+import * as classes from "./card-mobiles.component.styles";
 
 interface Props {
   mobile: MobileVm;
 }
 
 export const CardMobileComponent: React.FC<Props> = ({ mobile }) => {
+  const history = useHistory();
+
+  const goToMobileDetail = () => history.push(routes.detailMobile(mobile.id));
+
   return (
-    <div key={mobile.id}>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src={mobile.imgUrl} />
-        </ListItemAvatar>
-        <ListItemText
-          primary="Información del móvil"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="subtitle2"
-                color="textPrimary"
-              >
-                Marca: {mobile.brand}
-              </Typography>
-              <Typography
-                component="span"
-                variant="subtitle2"
-                color="textPrimary"
-              >
-                Modelo: {mobile.model}
-              </Typography>
-              <Typography
-                component="span"
-                variant="subtitle2"
-                color="textPrimary"
-              >
-                Precio: {mobile.price} €
-              </Typography>
-            </React.Fragment>
-          }
+    <div key={mobile.id} className={classes.root} onClick={goToMobileDetail}>
+      <Card className={classes.root}>
+        <CardHeader
+          title={`Movil de marca ${mobile.brand}`}
+          subheader={`Precio: ${mobile.price}€`}
         />
-        <Button
-          color="primary"
-          size="medium"
-          href={routes.detailMobile(mobile.id)}
-        >
-          Ir a detalle
-        </Button>
-      </ListItem>
-      <Divider variant="inset" component="li" />
+        <img className="mobile-image" src={mobile.imgUrl} />
+        <CardContent>
+          <Typography component="span" variant="subtitle2" color="textPrimary">
+            Marca: {mobile.brand}
+          </Typography>
+          <Typography component="span" variant="subtitle2" color="textPrimary">
+            Modelo: {mobile.model}
+          </Typography>
+        </CardContent>
+      </Card>
     </div>
   );
 };

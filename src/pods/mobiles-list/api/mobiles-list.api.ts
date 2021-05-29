@@ -9,10 +9,10 @@ export const fetchMobilesList = async (): Promise<MobileApi[]> => {
 };
 
 export const filterMobilesList = async (filter: string): Promise<MobileApi[]> => {
-  return fetch(`${baseUrl}/api/product`)
-    .then((response) => response.json())
-    .then((json) => json.filter((mobile: MobileApi) =>
-      mobile.brand.toLowerCase().indexOf(filter) > 0 ||
-      mobile.model.toLowerCase().indexOf(filter) > 0))
+  const mobiles = await fetchMobilesList();
+  return mobiles.filter((mobile: MobileApi) =>
+    mobile.brand.toLowerCase().indexOf(filter.toLowerCase()) !== -1 ||
+    mobile.model.toLowerCase().indexOf(filter.toLowerCase()) !== -1
+  )
 
 };

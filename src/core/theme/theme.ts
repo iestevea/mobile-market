@@ -7,10 +7,10 @@ const defaultTheme = createMuiTheme();
 export const theme: Theme = merge(defaultTheme, {
   palette: {
     primary: {
-      main: '#cd5d7d'
+      main: '#61988E'
     },
     secondary: {
-      main: '#a7c5eb'
+      main: '#493843'
     },
     success: {
       main: '#43a047',

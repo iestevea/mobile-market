@@ -1,8 +1,8 @@
-# Basic example of users list 
+# Mobile Market
 
 ## Summary
 
-This is a basic example made with react and styled with material-ui. It's composed of three routes: login, users list and user detail.
+This is a basic app about mobile marketplace made with React, TypeScript and Material UI.
 
 ## Install
 
@@ -20,7 +20,7 @@ npm start
 
 - Try!
 
-In the route `/list` you could see the users list according to the searcher's value and go to the detail of one of the users.
+In the route `/list` you could see the mobile list according to the searcher's value and go to the detail of one of the mobiles.
 
 
 

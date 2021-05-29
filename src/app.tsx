@@ -1,3 +1,4 @@
+import { ShoppingCartProvider } from "core/context/shopping-cart.context";
 import React from "react";
 import { RouterComponent } from "./core/router";
 import { ThemeProviderComponent } from "./core/theme";
@@ -5,7 +6,9 @@ import { ThemeProviderComponent } from "./core/theme";
 export const App = () => {
   return (
     <ThemeProviderComponent>
-      <RouterComponent />
+      <ShoppingCartProvider>
+        <RouterComponent />
+      </ShoppingCartProvider>
     </ThemeProviderComponent>
   );
 };

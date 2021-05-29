@@ -6,7 +6,7 @@ const mapMobileFromApiToVm = (mobile: MobileApi): MobileVm => ({
   imgUrl: mobile.imgUrl,
   model: mobile.model,
   brand: mobile.brand,
-  price: parseInt(mobile.price)
+  price: parseFloat(mobile.price) || 0
 })
 
 export const mapMobilesListFromApiToVm = (mobilesList) =>
